@@ -10,11 +10,15 @@ function createWindow () {
   })
 
   win.loadFile('src/index.html')
-  win.webContents.openDevTools()
-  win.setMenu(null)
+  // win.webContents.openDevTools()
+  win.setMenu(null) // Remove the menu
 }
 
 app.whenReady().then(createWindow)
+
+// -----------------
+// System Operations
+// -----------------
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -27,6 +31,14 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+// -----------------
+
+
+
+// -------------
+// Page Switches
+// -------------
 
 ipcMain.on("create-session", function(event) {
   // Grab the main window
@@ -43,3 +55,5 @@ ipcMain.on("join-session", function(event) {
   // Load the create.html file
   win.loadFile('src/join.html')
 })
+
+// -------------
