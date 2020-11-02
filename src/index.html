@@ -2,13 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>YouTube Sync</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <h1>YouTube Sync</h1>
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+
+    <h3>Dynamic Styling in Electron</h3>
+    <button id="style">Change Theme of Page</button>
+    <button id="clear">Revert to Original</button>
+
+    <!-- Adding Individual Renderer Process JS File -->
+    <script src="index.js"></script>
+  </body>
 </body>
 </html>

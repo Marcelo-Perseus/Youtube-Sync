@@ -5,11 +5,12 @@ function createWindow () {
     width: 1280,
     height: 720,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('src/index.html')
   win.webContents.openDevTools()
 }
 
