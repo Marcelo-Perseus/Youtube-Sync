@@ -10,7 +10,7 @@ function createWindow () {
   })
 
   win.loadFile('src/index.html')
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
   win.setMenu(null) // Remove the menu
 }
 
@@ -45,7 +45,7 @@ ipcMain.on("create-session", function(event) {
   win = BrowserWindow.getAllWindows()[0]
 
   // Load the create.html file
-  win.loadFile('src/create.html')
+  win.loadFile('src/player.html')
 })
 
 ipcMain.on("join-session", function(event) {
