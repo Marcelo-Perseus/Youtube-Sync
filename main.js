@@ -45,7 +45,7 @@ ipcMain.on("create-session", function(event) {
   win = BrowserWindow.getAllWindows()[0]
 
   // Load the create.html file
-  win.loadFile('src/create.html')
+  win.loadFile('src/player.html')
 })
 
 ipcMain.on("join-session-popup", function(event) {
