@@ -5,7 +5,7 @@ create.addEventListener('click', function() {
   ipcRenderer.send("create-session")
 });
 
-const join = document.getElementById('join-session')
+const join = document.getElementById('join-session-popup')
 join.addEventListener('click', function() {
-  ipcRenderer.send("join-session")
+  ipcRenderer.send("join-session-popup")
 })

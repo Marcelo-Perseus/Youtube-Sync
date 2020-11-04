@@ -10,7 +10,7 @@ function createWindow () {
   })
 
   win.loadFile('src/index.html')
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
   win.setMenu(null) // Remove the menu
 }
 
@@ -48,12 +48,37 @@ ipcMain.on("create-session", function(event) {
   win.loadFile('src/create.html')
 })
 
-ipcMain.on("join-session", function(event) {
-  // Grab the main window
-  win = BrowserWindow.getAllWindows()[0]
+ipcMain.on("join-session-popup", function(event) {
+  // Check to see if there is already a second window
+  if (BrowserWindow.getAllWindows().length === 2) {
+    return null
+  }
 
-  // Load the create.html file
-  win.loadFile('src/join.html')
+  // Create a new window
+  let popup = new BrowserWindow({
+    alwaysOnTop: true,
+    width: 400,
+    height: 200,
+    resizable: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  // Remove the menu
+  popup.setMenu(null)
+
+  // Load the html
+  popup.loadFile("src/join.html")
+})
+
+ipcMain.on("join-session", function(event, arg) {
+  // Close the popup
+  const popup = BrowserWindow.getFocusedWindow()
+  popup.close()
+
+  // Print the id
+  console.log(arg)
 })
 
 // -------------
