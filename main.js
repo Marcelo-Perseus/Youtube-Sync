@@ -135,9 +135,19 @@ ipcMain.on("join-session", (event, arg) => {
   connection.write("JOIN")
   connection.write(arg)
 
+  // Save the session id
+  session_id = arg
+
   // Load the player
   if (connection !== null) {
     win.loadFile("src/player.html")
+  }
+})
+
+// Send data to server
+ipcMain.on("update", (event, arg) => {
+  if (connection !== null) {
+    connection.write(arg)
   }
 })
 

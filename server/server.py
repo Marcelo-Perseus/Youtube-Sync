@@ -23,7 +23,8 @@ def session_thread(id, host, queue):
             users += [queue.get()]
 
         # Loop through each user and receive data
-        for i in range(len(users)):
+        i = 0
+        while i < len(users):
             user = users[i]
 
             # Default no message if there is nothing to receive
@@ -42,6 +43,8 @@ def session_thread(id, host, queue):
             elif message != "":
                 for user in users:
                     user.send(message.encode("utf-8"))
+
+            i += 1
 
     print("Session closed with id:", id)
 
