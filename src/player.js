@@ -1,3 +1,5 @@
+const ipcRenderer = require('electron').ipcRenderer;
+
 var tag = document.createElement('script');
 tag.id = 'iframe-demo';
 tag.src = 'https://www.youtube.com/iframe_api';
@@ -44,5 +46,9 @@ function onPlayerStateChange(event) {
 
 const press = document.getElementById('press-me')
 press.addEventListener('click', function() {
-  player.playVideo()
+  player.loadVideoById("M7lc1UVf-VE")
+})
+
+ipcRenderer.on("update", (event, arg) => {
+  console.log(arg)
 })
