@@ -83,6 +83,22 @@ press.addEventListener('click', function() {
   sendCommand("VIDEO:".concat(id))
 })
 
+// Add an event listener on the text input for when the user presses 'enter'
+const vid_input = document.getElementById('video-id-input')
+vid_input.addEventListener('keyup', (e) => {
+  if (e.key === "Enter" || e.keyCode === 13) {
+    // Grab the id from the text input
+    let id = document.getElementById("video-id-input").value
+
+    // Load the video and keep it paused at the start
+    player.loadVideoById(id)
+    player.pauseVideo()
+
+    // Send command to server
+    sendCommand("VIDEO:".concat(id))
+  }
+})
+
 ipcRenderer.on("update", (event, arg) => {
   executeCommand(arg)
 })
