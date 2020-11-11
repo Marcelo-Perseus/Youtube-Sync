@@ -42,7 +42,10 @@ def session_thread(id, host, queue):
                 i -= 1
             elif message != "":
                 for user in users:
-                    user.send(message.encode("utf-8"))
+                    try:
+                        user.send(message.encode("utf-8"))
+                    except Exception as e:
+                        print(e)
 
             i += 1
 
