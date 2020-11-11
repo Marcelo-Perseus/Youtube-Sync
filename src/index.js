@@ -1,4 +1,5 @@
-const ipcRenderer = require('electron').ipcRenderer;
+const electron = require('electron')
+const ipcRenderer = electron.ipcRenderer;
 
 const create = document.getElementById('create-session')
 create.addEventListener('click', () => {

@@ -1,12 +1,18 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-
 const net = require('net') // For network stuffs like connecting to session
-
 const settings = require('./settings.json') // For reading settings
+const contextMenu = require('electron-context-menu') // Context menu for copying and pasting
 
 // A global connection and session id variables
 let connection = null
 let session_id = ""
+
+// Global context menu variable
+const dispose = contextMenu({
+    prepend: (actions, props, browserWindow) => [],
+    showInspectElement: false,
+    showSearchWithGoogle: false
+})
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -18,7 +24,7 @@ function createWindow () {
   })
 
   win.loadFile('src/index.html')
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
   win.setMenu(null) // Remove the menu
 }
 

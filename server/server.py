@@ -115,7 +115,7 @@ while True:
     message = clientsocket.recv(2048).decode("utf-8")
 
     # Make it a non blocking client socket with a timeout of 0.1 seconds
-    clientsocket.settimeout(0.1)
+    clientsocket.settimeout(0.8)
 
     # If the message is a valid command, then execute, otherwise close
     if message == "CREATE":
