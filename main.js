@@ -154,6 +154,19 @@ ipcMain.on("join-session", (event, arg) => {
 ipcMain.on("update", (event, arg) => {
   if (connection !== null) {
     connection.write(arg)
+    if (arg === "CLOSE") {
+      // Reset the connection variable
+      connection = null
+    }
+  }
+
+  // Go back to the splash screen (independent of whether connection is null)
+  if (arg === "CLOSE") {
+    // Grab the main window
+    win = BrowserWindow.getAllWindows()[0]
+
+    // Load the splash screen again
+    win.loadFile("src/index.html")
   }
 })
 

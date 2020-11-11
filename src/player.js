@@ -71,7 +71,7 @@ function onPlayerStateChange(event) {
 }
 
 const press = document.getElementById('video-id-button')
-press.addEventListener('click', function() {
+press.addEventListener('click', () => {
   // Grab the id from the text input
   let id = document.getElementById("video-id-input").value
 
@@ -97,6 +97,12 @@ vid_input.addEventListener('keyup', (e) => {
     // Send command to server
     sendCommand("VIDEO:".concat(id))
   }
+})
+
+const back = document.getElementById('back-button')
+back.addEventListener('click', () => {
+  // Send command to server
+  sendCommand("CLOSE")
 })
 
 ipcRenderer.on("update", (event, arg) => {
