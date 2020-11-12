@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>Youtube Sync</title>
+    <link rel="stylesheet" href="player.css">
   </head>
   <body>
-    <div class="session-id-container">
-      <h3>ID:</h3>
-      <h3 id="session-id"></h3>
+    <div class="top-bar-container">
+      <img class="small-logo" src="images/logo.png" alt="Logo">
+      <button id="back-button" type="button" name="button">Back</button>
     </div>
 
-    <iframe id="player"
-      width="640" height="360"
-      src="https://www.youtube.com/embed/?enablejsapi=1"
-      frameborder="0"
-      style="border: solid 4px #37474F"
-      allowfullscreen></iframe>
-
-    <div class="">
-      <input type="text" id="video-id-input" value="">
-      <button id="video-id-button" type="button" name="button">Queue</button>
+    <div class="player-container">
+      <iframe id="player"
+        width="640" height="360"
+        src="https://www.youtube.com/embed/?enablejsapi=1"
+        frameborder="0"
+        allowfullscreen></iframe>
     </div>
 
-    <button id="back-button" type="button" name="button">Back</button>
+    <div class="bottom-buttons-container">
+      <div class="queue-container">
+        <button id="video-id-button" type="button" name="button">Queue</button>
+        <input type="text" id="video-id-input" value="">
+      </div>
+
+      <div class="id-container">
+        <p class="label">ID: </p>
+        <p id="session-id"></p>
+      </div>
+    </div>
 
     <script src="player.js"></script>
   </body>

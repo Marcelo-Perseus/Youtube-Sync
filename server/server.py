@@ -31,7 +31,7 @@ def session_thread(id, host, queue):
             message = ""
             try:
                 message = user.recv(2048).decode("utf-8")
-            except Exception as e: # Timeout occurred
+            except Exception as e: # Timeout occurred or message didn't decode
                 pass
 
             # Forwards the message to every client in the session

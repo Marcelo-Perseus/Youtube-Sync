@@ -1,0 +1,150 @@
+body {
+  background-color: #232930;
+}
+
+.top-bar-container {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 54px;
+}
+
+.small-logo {
+  width: 268px;
+  height: 42px;
+  position: absolute;
+  top: 6px;
+  left: 227px;
+}
+
+#back-button {
+  background-color: #8a8e93;
+  color: #44474a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  width: 85px;
+  height: 30px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  position: absolute;
+  right: 271px;
+}
+
+.player-container {
+  background-color: #444f5c;
+  position: absolute;
+  top: 54px;
+  bottom: 54px;
+  right: 138px;
+  left: 138px;
+}
+
+iframe#player {
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-buttons-container {
+  float: left;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  height: 54px;
+}
+
+.queue-container {
+  background-color: #8a8e93;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  float: left;
+  color: #44474a;
+  border: none;
+  border-radius: 5px;
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  left: 138px;
+}
+
+#video-id-button {
+  background-color: inherit;
+  color: #44474a;
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  border-right: 2px;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  transition-duration: 0.3s;
+}
+
+#video-id-button:hover {
+  background-color: #44474a;
+  color: #8a8e93;
+}
+
+#video-id-button:focus {
+  outline: none;
+}
+
+#video-id-input {
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  bottom: 0px;
+  margin-right: 5px;
+  width: 70%;
+  font-family: Arial,  sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #44474a;
+}
+
+#video-id-input:focus {
+  outline: none;
+}
+
+.id-container {
+  background-color: #8a8e93;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  float: left;
+  color: #44474a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  right: 138px;
+}
+
+p.label {
+  float: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3px;
+  margin-right: 0px;
+  width: 35px;
+}
+
+p#session-id {
+  float: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+  margin-right: 0px;
+  width: 305px;
+  height: 25px;
+}

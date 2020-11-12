@@ -23,8 +23,8 @@ function createWindow () {
     }
   })
 
-  win.loadFile('src/index.html')
-  win.webContents.openDevTools()
+  win.loadFile('src/player.html')
+  // win.webContents.openDevTools()
   win.setMenu(null) // Remove the menu
 }
 
