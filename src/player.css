@@ -33,6 +33,13 @@ body {
   margin-bottom: 12px;
   position: absolute;
   right: 271px;
+  transition-duration: 0.3s;
+}
+
+#back-button:hover {
+  outline: none;
+  background-color: #44474a;
+  color: #8a8e93;
 }
 
 .player-container {

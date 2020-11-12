@@ -1,0 +1,55 @@
+body {
+  background-color: #232930;
+}
+
+.large-logo {
+  position: absolute;
+  top: 234px;
+  left: 396px;
+  width: 486px;
+  height: 76px;
+}
+
+button {
+  background-color: #8a8e93;
+  color: #44474a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: #44474a;
+  color: #8a8e93;
+}
+
+button:focus {
+  outline: none;
+}
+
+.buttons-container {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 346px;
+  bottom: 336px;
+  width: 100%;
+  height: 38px;
+}
+
+#create-session {
+  position: absolute;
+  top: 3px;
+  left: 420px;
+  width: 204px;
+}
+
+#join-session-popup {
+  position: absolute;
+  top: 3px;
+  right: 420px;
+  width: 204px;
+}
